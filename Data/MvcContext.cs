@@ -11,6 +11,6 @@ namespace MVC03.Data
         {
         }
 
-        public DbSet<Member> Members { get; set; } = default!;
+        public DbSet<Member> tblMember { get; set; } = default!;
     }
 }
