@@ -1,0 +1,65 @@
+@model IEnumerable<MVC03.Models.Member>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+               Year of Birthday
+            </th>
+            <th>
+               Email
+            </th>
+            <th>
+                Phone Number
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>
+                Password
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YearOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberPassword)
+            </td>
+            @* <td>
+                <a asp-action="Edit" asp-route-id="@item.MemberName">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MemberName">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MemberName">Delete</a>
+            </td> *@
+        </tr>
+}
+    </tbody>
+</table>
